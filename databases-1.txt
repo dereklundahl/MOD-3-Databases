@@ -3,8 +3,17 @@
 "A Clockwork Orange" - String that represents a name.
 42 - Number that represents a number or index in a table.
 09/02/1945 - Number or string that represents a date. 
-98.7 - Number that could represent a rating.
+98.7 - Float that could represent a rating.
 $15.99 - A string that represents an ammount.
+
+I am a little confused as to what is wrong with this answer so I will do my best to reference specific information from the checkpoint. The lesson says "Many of these pieces of data are similar in some way: they might be numbers, text, or objects. We refer to these similarities as data types." I typically think of data types as strings, booleans, integers but with data bases they are listed as numbers, text, and objects as it states with this quote: " Many of these pieces of data are similar in some way: they might be numbers, text, or objects. We refer to these similarities as data types." My confusion comes from the fact that right below that statement, there is a table which lables the data types with "string", "integer", "float", "object". I will revise my answers to reflect the quote and not the table.
+
+"A Clockwork Orange" - Text representing a title.
+42 - Number that represents a number or index in a table.
+09/02/1945 - Number or string that represents a date. 
+98.7 - Number that could represent a rating.
+$15.99 - Text that represents an ammount.
+
 
 2. Explain when a database would be used. Explain when a text file would be used.
 
@@ -32,18 +41,24 @@ A: The three data types that can be used in tables are numbers, to include integ
      FROM payments;
 
      A: Find the date that payments were made and how much from the payment table
+     Results - 2016-05-01 1500.00
+               2016-05-10 37.00
+               2016-05-15 124.93
+               2016-05-23 54.72
 
      SELECT amount
      FROM payments
      WHERE amount > 500;
 
      A: Get payment amounts over 500 from the table called payments.
+     Result - 1500.00
 
      SELECT *
      FROM payments
      WHERE payee = 'Mega Foods';
 
      A: Get all information from the payment table with Mega Foods as the payee.
+     Result - 2016-05-15 Mega Foods 124.93 Groceries
 
 8. Given this users table, write SQL queries using the following criteria and include the output:
 
@@ -51,7 +66,7 @@ The email and sign-up date for the user named DeAndre Data.
 
 A: SELECT email, signup
    FROM users
-   WHERE userid = 2
+   WHERE name = 'DeAndre Data'
 
    Output datad@comcast.net 2008-01-20
 
