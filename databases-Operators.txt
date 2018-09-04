@@ -1,0 +1,123 @@
+####Questions
+
+> Write out a generic SELECT statement.
+
+A: SELECT year, milage
+   FROM cars
+   WHERE year > 2005;
+
+>Create a fun way to remember the order of operations in a SELECT statement, such as a mnemonic.
+
+A: SELECT FROM WHERE is SFW which makes me think of So Freaking What.
+
+>Given this dogs table, write queries to select the following pieces of data:
+
+Intake teams typically guess the breed of shelter dogs, so the breed column may have multiple words (for example, "Labrador Collie mix").
+
+>Display the name, gender, and age of all dogs that are part Labrador.
+
+A: SELECT name, gender, age
+   FROM dogs
+   WHERE breed LIKE '%Labrador%';
+
+>Display the ids of all dogs that are under 1 year old.
+
+A: SELECT id
+   FROM dogs
+   WHERE age > 1;
+
+>Display the name and age of all dogs that are female and over 35lbs.
+
+A: SELECT name, age
+   FROM dogs
+   WHERE gender=female AND weight > 35;
+
+>Display all of the information about all dogs that are not Shepherd mixes.
+
+A: SELECT *
+   FROM dogs
+   WHERE breed NOT LIKE '%shepherd%';
+
+>Display the id, age, weight, and breed of all dogs that are either over 60lbs or Great Danes.
+
+A: SELECT id, age, weight, breed
+   FROM dogs
+   WHERE weight > 60 OR breed='great dane';
+
+Given this cats table, what records are returned from these queries?
+
+>SELECT name, adoption_date FROM cats;
+
+A: SELECT name, adoption_date
+   FROM cats;
+
+>SELECT name, age FROM cats;
+
+A: SELECT name, age
+   FROM cats;
+
+From the cats table, write queries to select the following pieces of data.
+
+>Display all the information about all of the available cats.
+
+A: SELECT *
+   FROM cats;
+
+>Display the name and sex of all cats who are 7 years old.
+
+A: SELECT name, gender
+   FROM cats
+   WHERE age=7;
+
+>Find all of the names of the cats, so you don’t choose duplicate names for new cats.
+
+A: SELECT names
+   FROM cats;
+
+>List each comparison operator and explain when you would use it. Include a real world example for each.
+
+A: 
+- = Used to find when a statement equals another statement. I want to find all of the books that written by Hemmingway.
+
+- != Used to find when a statement does not equal another. I want to see all of the books that are not Science Fiction because I don't enjoy sci-fi.
+
+- > Used to find when a statement is greater than another. I want to see all of the books that have more than 500 pages.
+
+- < Used to find when a statement is less than another. I want to see all of the books that have less than 300 pages.
+
+- >= Greater than or equal to. Used to find a statement that is greater or equal. I want to see purchases that are 500 dollars or more.
+
+- <= Less than or equal to. Used to find a statement that is less than or equal. I want to see expenses that were less than or equal to 10 dollars.
+
+- <> Greater than or less than when comparing values. On the wine list table, I know that all of the wines that were made in 1999 are a vintage that is bad so I want all wines that are <> 1999.
+
+- AND Used when you have more than one condition. I want to see all of the books written by Hemmingway AND are less than 300 pages.
+
+- OR Used when you want to see data that matches one condition or another. I want to see all the books that are written by Hemmingway OR are fantasy genre since I know that I like those.
+
+- BETWEEN Used to find when an expression is between other expressions. I want to see all of the books that are between 100 and 500 pages so 100 BETWEEN 500.
+
+- NOT The expression should be false for data to be returned. I want to see all of the books that are NOT sci-fi OR biographies.
+
+- IS NULL Used to determine if a cells contents are null or not. I want to see all of the emails that do not have a subject line so where subj=NULL.
+
+- IS TRUE / IS FALSE Used to determine if an expression is true or false when it could be null. 
+
+- IS DISTINCT FROM Used instead of <> when one of the inputs could be null. I want to see all of the emails that are not work related but some of the emails my not have a subject included so the subject line could be null. I will use IS DISTINCT FROM work.
+
+- LIKE used to match a pattern like a string. I want to see all of the emails that are related to work so I use LIKE '%work%' for the subject line.
+
+If you can’t list these from memory, do these flashcards until you can!
+
+From the cats table, what data is returned from these queries?
+>SELECT name FROM cats WHERE gender = ‘F’;
+
+A: This will return all of the names of the female cats. Seashell, and Nala.
+
+>SELECT name FROM cats WHERE age <> 3;
+
+A: This returns all of the names of cats that are not 3 years old. It will return Mushi, Seashell, Victoire, and Nala.
+
+>SELECT ID FROM cats WHERE name != ‘Mushi’ AND gender = ‘M’;
+
+A: This will return cats that are not named Mushi and that are male. It returns Azul and Victoire.
